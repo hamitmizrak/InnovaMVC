@@ -2,7 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<!--D.I veya plugin için gereklidir.-->
+
+    <!--D.I veya plugin için gereklidir.-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -22,6 +23,17 @@
 
 
     <dependencies>
+        <!-- JSP icin -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
         <!--  spring MVC-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,15 +61,15 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!--   tools -->
-<!--proje durum bilgisi icin-->
+        <!-- tools -->
+        <!--proje durum bilgisi icin-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-<!-- projeyi restart yapmadan acmak-->
-<!--sadece gelistirme ortamında kullanmalısın bunun icin asagıda optional true yazılmış -->
+        <!-- projeyi restart yapmadan acmak-->
+        <!--sadece gelistirme ortamında kullanmalısın bunun icin asagıda optional true yazılmış -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -70,7 +82,6 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-
 
         <!-- template-->
         <dependency>
