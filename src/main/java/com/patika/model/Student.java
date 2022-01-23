@@ -1,15 +1,21 @@
 package com.patika.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@Getter
+@Setter
+@ToString
 public class Student {
-    private String studentName;
-    private String studentSurname;
+
+    private String adi;
+    private String soyadi;
+
+    public Student() {
+    }
+
+    public Student(String adi, String soyadi) {
+        this.adi = adi;
+        this.soyadi = soyadi;
+    }
 }
