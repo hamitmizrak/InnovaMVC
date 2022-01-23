@@ -5,12 +5,11 @@ package com.patika.web;
 
 
 import com.patika.model.Student;
+import com.patika.model.WriterDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.constraints.Pattern;
 
 @Controller
 @Log4j2
@@ -125,6 +124,26 @@ public class _01_ResponseBody {
 
     /////////////////////////////////////// FORM //////////////////////////////////////////////////////////////////////////
 
+
+   // http://localhost:3333/onikinci
+    @GetMapping("/onikinci")
+    public String getWriter(Model model) {
+        //Database select
+        WriterDto writerDto = WriterDto.builder().writerName("adınızı girmediniz").writerSurname("Soyadınızı girmediniz").writerAddress("address girmediniz").writerTelephoneNumber(11122233).build();
+        model.addAttribute("form_key", writerDto);
+        return "form";
+    }
+
+    //client yazdıklarını almak istiyorum
+    // http://localhost:3333/onikinci
+    @PostMapping("/onikinci")
+    public String postWriter(Model model, WriterDto writerDto) {
+        log.info(writerDto.getId() + " " + writerDto.getWriterName() + " " + writerDto.getWriterSurname() + " " + writerDto.getWriterAddress() + " " + writerDto.getWriterTelephoneNumber());
+        //dosyaya yazdırma
+        //Database Create işlemleri burada yapacağız.
+        model.addAttribute("form_key", writerDto);
+        return "form";
+    }
 
 
 
