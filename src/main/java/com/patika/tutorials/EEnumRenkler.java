@@ -13,10 +13,10 @@ public enum EEnumRenkler {
 enum Renkler2 {
     MAVI(1,"mavi"),YESIL(2,"yesil"),TURUNCU(3,"turuncu");
 
-    @Getter @Setter
+    @Getter
     private final int renkId;
 
-    @Getter @Setter
+    @Getter
     private final String renkAdi;
 
    private Renkler2(int renkId, String renkAdi) {
