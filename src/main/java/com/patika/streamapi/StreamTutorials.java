@@ -23,12 +23,10 @@ public class StreamTutorials {
         List<String> list2=list.stream().sorted().collect(Collectors.toList());
         list2.forEach(System.out::println);
 
-
         List<String> list3=list.stream().sorted().collect(Collectors.toList());
         list2.forEach(System.out::println);
 
         list.stream().filter( patika ->!"malatya".equals(patika)).collect(Collectors.toList());
-
 
         System.out.println("++++++++++++++++++++++++++++");
         List<String> list5= Arrays.asList("malatya","istanbul","ankara");
